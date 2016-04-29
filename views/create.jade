@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  div(ng-app='SoapstoneApp')
+    div(ng-controller='SoapstoneController')
+      table
+        tbody
+          tr
+            th Template
+            td
+              select(ng-options='index as template for (index, template) in templates', ng-model='templateIndexOne')
+
+          tr
+            th Word
+            td
+              select(ng-options='v as k for (k, v) in categories', ng-model='categoryOne', ng-disabled='!templateIndexOne')
+              select(ng-options='word as word for word in categoryOne', ng-model='wordOne', ng-disabled='!categoryOne', ng-change='updateCode()')
+
+          tr
+            th Conjunction
+            td
+              select(ng-options='index as conjunction for (index, conjunction) in conjunctions', ng-model='conjunctionIndex', ng-disabled='!wordOne', ng-change='updateCode()')
+
+          tr(ng-hide='conjunctionIndex === "0" || conjunctionIndex === undefined')
+            th Template
+            td
+              select(ng-options='index as template for (index, template) in templates', ng-model='templateIndexTwo')
+
+          tr(ng-hide='conjunctionIndex === "0" || conjunctionIndex === undefined')
+            th Word
+            td
+              select(ng-options='v as k for (k, v) in categories', ng-model='categoryTwo', ng-disabled='!templateIndexTwo')
+              select(ng-options='word as word for word in categoryTwo', ng-model='wordTwo', ng-disabled='!categoryTwo', ng-change='updateCode()')
+              
+      a.code(ng-show='code', ng-href='/{{ code }}') https://soapstone.retzudo.com/{{ code }}
+      h1 {{ code }}
+
+append javascript
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.2/lodash.min.js')
+  script(src='/javascripts/create.js')
