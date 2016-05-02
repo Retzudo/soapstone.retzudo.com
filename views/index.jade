@@ -1,7 +1,12 @@
 extends layout
 
+append head
+  link(href='https://fonts.googleapis.com/css?family=Lora', rel='stylesheet', type='text/css')
+
 block content
-  h1#message Dark Souls message
+  .message
+    .message__line#message
+  .bonfire
 
 append javascript
   script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.2/lodash.min.js')

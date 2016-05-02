@@ -426,7 +426,7 @@
 
             var partTwo = makeSentence(template, word);
 
-            return partOne + ' ' + conjunction + ' ' + partTwo;
+            return partOne + '<br>' + conjunction + ' ' + partTwo;
         }
     }
 
