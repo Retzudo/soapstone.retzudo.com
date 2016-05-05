@@ -22,6 +22,7 @@
     ];
     var CONJUNCTIONS = [
         'and then',
+	'but',
         'therefore',
         'in short',
         'or',
