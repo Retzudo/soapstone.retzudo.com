@@ -65,7 +65,7 @@
     }
 
     function getConjunction(codePart) {
-        codePart = parseInt(codePart.trim(), 10);
+        codePart = parseInt(codePart.trim(), 10) + 1;
         var conjunction = CONJUNCTIONS[codePart];
         if (!conjunction) {
             throw 'Invalid conjunction';
