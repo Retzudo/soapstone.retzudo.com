@@ -1,0 +1,28 @@
+{
+  "name": "soapstone.retzudo.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Retzudo/soapstone.retzudo.com.git",
+  "author": "Retzudo",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4",
+    "vue": "^2.5.2",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "webpack": "^3.8.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
+  }
+}
