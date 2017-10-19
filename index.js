@@ -12,8 +12,11 @@ app.get('/', (req, res) => {
 
 app.get('/:code', (req, res) => {
     let { code } = req.params;
+    let message = codeToMessage(code);
+    console.log('Code:', code);
+    console.log('Message:', message);
 
-    res.send(codeToMessage(code));
+    res.send(message);
 });
 
 const PORT = process.env.SOAPSTONE_PORT || 8080
