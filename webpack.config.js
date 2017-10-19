@@ -1,4 +1,5 @@
 module.exports = {
+  devtool: 'inline-source-map',
   entry: './frontend-js/build.js',
   output: {
     path: __dirname + '/public/js',

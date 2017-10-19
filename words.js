@@ -376,3 +376,9 @@ const CATEGORIES = {
         'may the flames guide thee'
     ]
 };
+
+module.exports = {
+    TEMPLATES,
+    CONJUNCTIONS,
+    CATEGORIES
+};

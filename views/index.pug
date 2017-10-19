@@ -1,7 +1,44 @@
 doctype html
-html(lang='en')
+html(lang="en")
   head
     title Red Sign Soapstone
   body
+
     #builder
-    script(src='js/build.js')
+      label(for="template-one") Template
+      select(name="template-one", v-model="templateOne")
+        option(v-for="(template, index) in templates", v-bind:value="index") {{ template }}
+
+      br
+
+      label(for="category-one") Word
+      select(name="category-one", v-model="selectedCategoryOne")
+        option(v-for="(category, name) in categories") {{ name }}
+      select(name="word-one", v-model="wordOne", v-if="wordsOne")
+        option(v-for="(word, index) in wordsOne") {{ word }}
+
+      br
+
+      label(for="conjunction") Conjunction
+      select(name="conjunction", v-model="conjunction")
+        option(v-for="(conjunction, index) in conjunctions", v-bind:value="index") {{ conjunction }}
+
+      div(v-if="templateOne !== null && wordOne !== null && conjunction !== null")
+        label(for="template-two") Template
+        select(name="template-two", v-model="templateTwo")
+          option(v-for="(template, index) in templates", v-bind:value="index") {{ template }}
+
+        br
+
+        label(for="category-two") Word
+        select(name="category-two", v-model="selectedCategoryTwo")
+          option(v-for="(category, name) in categories") {{ name }}
+        select(name="word-two", v-model="wordTwo", v-if="wordsTwo")
+          option(v-for="(word, index) in wordsTwo") {{ word }}
+
+      br
+
+      a(:href="'/' + code", v-if="code") https://soapstone.retzudo.com/{{ code }}
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js")
+    script(src="js/build.js")
