@@ -6,6 +6,9 @@
   "author": "Retzudo",
   "license": "MIT",
   "private": true,
+  "scripts": {
+      "build": "webpack --progress -p"
+  },
   "dependencies": {
     "express": "^4.16.2",
     "pug": "^2.0.0-rc.4",
@@ -13,6 +16,9 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.9.0",
     "webpack": "^3.8.1"
   },
