@@ -1,5 +1,7 @@
 const express = require('express');
 
+const { codeToMessage } = require('./code');
+
 const app = express();
 app.set('view engine', 'pug');
 app.use(express.static('public'));
@@ -10,7 +12,8 @@ app.get('/', (req, res) => {
 
 app.get('/:code', (req, res) => {
     let { code } = req.params;
-    res.render('display');
+
+    res.send(codeToMessage(code));
 });
 
 const PORT = process.env.SOAPSTONE_PORT || 8080

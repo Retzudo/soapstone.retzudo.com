@@ -8,7 +8,7 @@ const WORDS = flatten(values(CATEGORIES));
 function indexesToCode(templateOneIndex, wordOneIndex, conjunctionIndex = null, templateTwoIndex = null, wordTwoIndex = null) {
     let code = '';
 
-    if (!templateOneIndex || !wordOneIndex) {
+    if (!templateOneIndex && templateOneIndex !== 0 || !wordOneIndex && wordOneIndex !== 0) {
         return code;
     }
 
