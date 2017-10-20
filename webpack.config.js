@@ -1,6 +1,6 @@
 module.exports = {
   devtool: 'inline-source-map',
-  entry: './frontend-js/build.js',
+  entry: './frontend/js/build.js',
   output: {
     path: __dirname + '/public/js',
     filename: 'build.js'

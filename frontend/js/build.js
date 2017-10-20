@@ -1,7 +1,7 @@
 import indexOf from 'lodash/indexOf';
 
-import { TEMPLATES, CATEGORIES, CONJUNCTIONS } from '../words';
-import { indexesToCode, WORDS } from '../code';
+import { TEMPLATES, CATEGORIES, CONJUNCTIONS } from '../../words';
+import { indexesToCode, WORDS } from '../../code';
 
 new Vue({
     el: '#builder',
