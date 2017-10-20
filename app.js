@@ -19,7 +19,4 @@ app.get('/:code', (req, res) => {
     res.send(message);
 });
 
-const PORT = process.env.SOAPSTONE_PORT || 8080
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
+module.exports = app;
