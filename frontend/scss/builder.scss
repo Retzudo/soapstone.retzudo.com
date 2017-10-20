@@ -1,0 +1,59 @@
+[v-cloack] {
+    display: none;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    color: #d2d2d2;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+#builder {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    margin-right: 0.5em;
+    width: 150px;
+}
+
+a:link {
+    color: #fff;
+}
+
+.selects {
+    margin: 1em 0;
+}
+
+.conjunction, .part-two {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+select + select {
+  margin-left: 0.5em;
+}
