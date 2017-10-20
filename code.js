@@ -37,46 +37,44 @@ function indexesToCode(templateOneIndex, wordOneIndex, conjunctionIndex = null, 
 }
 
 function codeToMessage(code) {
+    let message = {
+      partOne: null,
+      conjunction: null,
+      partTwo: null
+    };
+
     if (!code.match(/^[0-9a-g][0-9a-z]{2}$/) && !code.match(/^[0-9a-g][0-9a-z]{2}[0-9][0-9a-g][0-9a-z]{2}$/)) {
-        throw 'Invalid code';
+        return message;
     }
 
-    if (code.length === 3) {
-        var templateId = code[0];
-        var wordId = code.slice(1, 3);
+    if (code.length >= 3) {
+        let templateId = code[0];
+        let wordId = code.slice(1, 3);
 
-        var template = getTemplate(templateId);
-        var word = getWord(wordId);
+        let template = getTemplate(templateId);
+        let word = getWord(wordId);
 
-        return makeSentence(template, word);
+        message.partOne = makeSentence(template, word);
     }
 
     if (code.length === 7) {
-        var templateId = code[0];
-        var wordId = code.slice(1, 3);
+        let conjunctionId = code[3];
+        let templateId = code[4];
+        let wordId = code.slice(5, 7);
 
-        var template = getTemplate(templateId);
-        var word = getWord(wordId);
+        let template = getTemplate(templateId);
+        let word = getWord(wordId);
 
-        var partOne = makeSentence(template, word);
-
-        var conjunctionId = code[3];
-        templateId = code[4];
-        wordId = code.slice(5, 7);
-
-        var conjunction = getConjunction(conjunctionId);
-        var template = getTemplate(templateId);
-        var word = getWord(wordId);
-
-        var partTwo = makeSentence(template, word);
-
-        return `${partOne} ${conjunction} ${partTwo}`;
+        message.conjunction = getConjunction(conjunctionId);
+        message.partTwo = makeSentence(template, word);
     }
+
+    return message;
 }
 
 function getTemplate(codePart) {
     codePart = parseInt(codePart.trim(), 17);
-    var template = TEMPLATES[codePart];
+    let template = TEMPLATES[codePart];
 
     if (template) {
         return template;

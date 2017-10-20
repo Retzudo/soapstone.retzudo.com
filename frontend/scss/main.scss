@@ -8,7 +8,7 @@ body {
   display: block;
   width: 937px;
   height: 205px;
-  background-image: url("/images/plaque.jpg");
+  background-image: url("/img/plaque.jpg");
   background-repeat: no-repeat;
   margin: 0 auto;
   padding-left: 213px;
@@ -22,18 +22,6 @@ body {
     font-size: 24px;
     line-height: 35px;
   }
-}
-
-.bonfire {
-  background-image: url('/images/bonfire.gif');
-  display: block;
-  width: 240px;
-  height: 212px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  -webkit-transform: translate(-50%, 0);
 }
 
 .leave-a-message {

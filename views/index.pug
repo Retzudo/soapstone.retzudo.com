@@ -2,9 +2,13 @@ doctype html
 html(lang="en")
   head
     title Red Sign Soapstone
+    style.
+      [v-cloak] {
+        display: none;
+      }
   body
 
-    #builder
+    #builder(v-cloak)
       label(for="template-one") Template
       select(name="template-one", v-model="templateOne")
         option(v-for="(template, index) in templates", v-bind:value="index") {{ template }}

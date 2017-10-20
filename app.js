@@ -13,10 +13,12 @@ app.get('/', (req, res) => {
 app.get('/:code', (req, res) => {
     let { code } = req.params;
     let message = codeToMessage(code);
-    console.log('Code:', code);
-    console.log('Message:', message);
+    let fullMessage = [message.partOne, message.conjunction, message.partTwo].join(' ').trim();
 
-    res.send(message);
+    res.render('display', Object.assign(message, {
+      code,
+      fullMessage
+    }));
 });
 
 module.exports = app;
