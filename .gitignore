@@ -1,4 +1,3 @@
-*.log
-node_modules
-public/stylesheets/*.css
-public/stylesheets/*.map
+node_modules/
+public/js/*.js
+public/css/*.css

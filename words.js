@@ -1,4 +1,4 @@
-var TEMPLATES = [
+const TEMPLATES = [
     '**** ahead',
     'No **** ahead',
     '**** required ahead',
@@ -18,7 +18,7 @@ var TEMPLATES = [
     'Ahh, ****...'
 ];
 
-var CONJUNCTIONS = [
+const CONJUNCTIONS = [
     '',
     'and then',
     'but',
@@ -32,7 +32,7 @@ var CONJUNCTIONS = [
     ','
 ];
 
-var CATEGORIES = {
+const CATEGORIES = {
     'Creatures': [
         'enemy',
         'monster',
@@ -377,3 +377,8 @@ var CATEGORIES = {
     ]
 };
 
+module.exports = {
+    TEMPLATES,
+    CONJUNCTIONS,
+    CATEGORIES
+};

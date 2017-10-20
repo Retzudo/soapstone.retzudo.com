@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Soapstone Message")
+    meta(property="og:descrpition" content=fullMessage)
+    meta(property="og:url" content="https://soapstone.retzudo.com/" + code)
+    meta(property="og:image" content="https://soapstone.retzudo.com/img/soapstone.png")
+    link(href="https://fonts.googleapis.com/css?family=Lora", rel="stylesheet", type="text/css")
+    link(href="css/main.css", rel="stylesheet", type="text/css")
+
+  body
+    .message
+      .message__line
+        | #{partOne}
+        if conjunction
+          | #{' '}#{conjunction}
+          br
+          | #{partTwo}
+
+    a(href="/").leave-a-message
+      img(src="/img/soapstone.png", alt="Pick up the Soapstone")

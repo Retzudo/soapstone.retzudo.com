@@ -1,22 +1,37 @@
 {
   "name": "soapstone.retzudo.com",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Retzudo/soapstone.retzudo.com.git",
+  "author": "Retzudo",
+  "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "build-scss": "sass ./frontend/scss/main.scss > ./public/css/main.css && sass ./frontend/scss/builder.scss > ./public/css/builder.css",
+    "build": "webpack --progress -p",
+    "start": "npm run build && npm run build-scss && node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.6.1",
-    "node-sass-middleware": "0.8.0",
-    "serve-favicon": "~2.3.0"
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "pug": "^2.0.0-rc.4",
+    "whatwg-fetch": "^2.0.3"
   },
-  "engines": {
-    "node": "6.1.0",
-    "npm": "3.8.9"
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "sass": "^1.0.0-beta.2",
+    "webpack": "^3.8.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
   }
 }
