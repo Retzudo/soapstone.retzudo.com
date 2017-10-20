@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build-scss": "sass ./frontend/scss/main.scss > ./public/css/main.css",
+    "build-scss": "sass ./frontend/scss/main.scss > ./public/css/main.css && sass ./frontend/scss/builder.scss > ./public/css/builder.css",
     "build": "webpack --progress -p",
     "start": "npm run build && npm run build-scss && node ./bin/www"
   },
