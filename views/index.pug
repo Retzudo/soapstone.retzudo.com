@@ -6,6 +6,11 @@ html(lang="en")
       [v-cloak] {
         display: none;
       }
+    script.
+      // Redirect for legacy codes
+      if (location.hash) {
+        location.href = '/' + location.hash.substring(1);
+      }
   body
 
     #builder(v-cloak)
